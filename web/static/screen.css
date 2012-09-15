@@ -1,0 +1,20 @@
+ul { list-style: none; margin: 1em 0; padding: 0 0 0 40px; }
+li {margin:0 0 25px 0;}
+
+form {position:relative;margin:10px 0;}
+form input,
+form textarea {
+	display:inline-block;width:96%;height:30px;line-height:30px;padding:2px 5px;margin:5px 0;border:1px solid rgba(0,0,0,0.2);
+	border-radius:			2px;
+}
+form input:focus,
+form textarea:focus {border:1px solid #439D2A;}
+form textarea {height:200px; overflow: auto; vertical-align: top; resize: vertical;}
+form [type=submit] {display:block;height:36px;margin:10px auto;line-height:34px;border:none;}
+
+.section {position:relative;}
+.section_title {position:relative;padding:10px;}
+
+#guestbook_entries li {margin: 25px;}
+#guestbook_entries li p {margin: 5px;}
+#guestbook_entries li p > span {float:left;width:80px;color:#3FAAD4;font-weight:bold;}

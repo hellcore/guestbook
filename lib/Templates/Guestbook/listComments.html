@@ -1,0 +1,31 @@
+<div id="guestbook_entries" class="section">
+	<div class="section_title">
+		<h2>Guest Book</h2>
+		<?php if (!$admin) { ?>
+		<a href="/auth.php" alt="login">Login</a>
+		<?php } else { ?>
+		<a href="/auth.php?logout" alt="logout">Logout</a>
+		<?php } ?>
+	</div>
+
+	<?php if (!empty($allGuestbookEntries)) { ?>
+	<ul>
+	<?php foreach ($allGuestbookEntries as $entrie) { ?>
+		<li>
+			<p class="name"><span>Name</span><?php print $entrie['name']; ?></p>
+			<p class="email"><span>Email</span><?php print str_replace("@", " at ", $entrie['email']); ?></p>
+			<p class="comment"><span>Comment</span><?php print nl2br($entrie['comment']); ?></p>
+			<p class="datetime"><span>Date</span><?php print $entrie['datetime']; ?></p>
+			<?php if ($admin) { ?>
+			<p class="admin">
+				<a href="?action=edit&id=<?php print $entrie['id']; ?>" alt="edit">edit</a>
+				<a href="?action=delete&id=<?php print $entrie['id']; ?>" alt="delete">delete</a>
+			</p>
+			<?php } /* end admin if */ ?>
+		</li>
+	<?php } /* end foreach */ ?>
+	</ul>
+	<?php } else { ?>
+	<span>be the first sign my guest book</span>
+	<?php }/* end if */ ?>
+</div>
